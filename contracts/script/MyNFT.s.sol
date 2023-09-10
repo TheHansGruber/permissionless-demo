@@ -13,7 +13,7 @@ contract MyNFTScript is Script {
 
         vm.startBroadcast(deployerPrivateKey);
 
-        MyNFT myNft = new MyNFT("My NFT", "NFT");
+        MyNFT myNft = new MyNFT();
 
         vm.stopBroadcast();
     }

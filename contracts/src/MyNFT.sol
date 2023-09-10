@@ -2,11 +2,10 @@
 pragma solidity ^0.8.13;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract MyNFT is ERC721Enumerable, Ownable {
+contract MyNFT is ERC721Enumerable {
     using Strings for uint256;
 
     string private backgroundColor = "";
@@ -35,7 +34,7 @@ contract MyNFT is ERC721Enumerable, Ownable {
 
     Parts private parts;
 
-    constructor(string memory name, string memory symbol) ERC721(name, symbol) {
+    constructor() ERC721("My NFT", "NFT") {
         parts = Parts(
             '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-70 -70 445 445" fill="none">',
             '<rect x="-70" y="-70" width="445" height="445" fill="',

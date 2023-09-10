@@ -8,7 +8,7 @@ export default defineConfig({
     foundry({
       deployments: {
         MyNFT: {
-          [chains.baseGoerli.id]: '0x98fa892913006a636052c3c48c2b2f59c2ef39c0',
+          [chains.baseGoerli.id]: '0xac88df20c094bef2fba5beed1cb623d5138f601c',
         },
       },
       project: './contracts',

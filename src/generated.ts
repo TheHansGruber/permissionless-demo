@@ -16,56 +16,6 @@ import {
 } from 'wagmi/actions'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Counter
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const counterABI = [
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'from', internalType: 'address', type: 'address', indexed: true },
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
-      {
-        name: 'value',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-    ],
-    name: 'Transfer',
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [],
-    name: 'increment',
-    outputs: [],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'number',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: 'newNumber', internalType: 'uint256', type: 'uint256' }],
-    name: 'setNumber',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [],
-    name: 'testmethodss',
-    outputs: [],
-  },
-] as const
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ERC165
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -85,51 +35,12 @@ export const erc165ABI = [
 
 export const erc721ABI = [
   {
-    type: 'error',
+    stateMutability: 'nonpayable',
+    type: 'constructor',
     inputs: [
-      { name: 'sender', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-      { name: 'owner', internalType: 'address', type: 'address' },
+      { name: 'name_', internalType: 'string', type: 'string' },
+      { name: 'symbol_', internalType: 'string', type: 'string' },
     ],
-    name: 'ERC721IncorrectOwner',
-  },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'operator', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'ERC721InsufficientApproval',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidApprover',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'operator', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidOperator',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidReceiver',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidSender',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ERC721NonexistentToken',
   },
   {
     type: 'event',
@@ -311,62 +222,6 @@ export const erc721ABI = [
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export const erc721EnumerableABI = [
-  { type: 'error', inputs: [], name: 'ERC721EnumerableForbiddenBatchMint' },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'sender', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-      { name: 'owner', internalType: 'address', type: 'address' },
-    ],
-    name: 'ERC721IncorrectOwner',
-  },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'operator', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'ERC721InsufficientApproval',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidApprover',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'operator', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidOperator',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidReceiver',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidSender',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ERC721NonexistentToken',
-  },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'index', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'ERC721OutOfBoundsIndex',
-  },
   {
     type: 'event',
     anonymous: false,
@@ -1274,29 +1129,14 @@ export const ierc721ReceiverABI = [
 ] as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Math
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const mathABI = [
-  { type: 'error', inputs: [], name: 'MathOverflowedMulDiv' },
-] as const
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // MyNFT
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export const myNftABI = [
-  {
-    stateMutability: 'nonpayable',
-    type: 'constructor',
-    inputs: [
-      { name: 'name', internalType: 'string', type: 'string' },
-      { name: 'symbol', internalType: 'string', type: 'string' },
-    ],
-  },
+  { stateMutability: 'nonpayable', type: 'constructor', inputs: [] },
   { type: 'error', inputs: [], name: 'ERC721EnumerableForbiddenBatchMint' },
   {
     type: 'error',
@@ -1354,16 +1194,6 @@ export const myNftABI = [
     name: 'ERC721OutOfBoundsIndex',
   },
   {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
-  },
-  {
     type: 'event',
     anonymous: false,
     inputs: [
@@ -1407,25 +1237,6 @@ export const myNftABI = [
       { name: 'approved', internalType: 'bool', type: 'bool', indexed: false },
     ],
     name: 'ApprovalForAll',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-    ],
-    name: 'OwnershipTransferred',
   },
   {
     type: 'event',
@@ -1493,23 +1304,9 @@ export const myNftABI = [
   {
     stateMutability: 'view',
     type: 'function',
-    inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
     inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
     name: 'ownerOf',
     outputs: [{ name: '', internalType: 'address', type: 'address' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [],
-    name: 'renounceOwnership',
-    outputs: [],
   },
   {
     stateMutability: 'nonpayable',
@@ -1753,861 +1550,23 @@ export const myNftABI = [
     name: 'transferFrom',
     outputs: [],
   },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
-    outputs: [],
-  },
 ] as const
 
 /**
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export const myNftAddress = {
-  84531: '0x98FA892913006A636052C3c48C2b2F59C2EF39C0',
+  84531: '0xAc88df20C094Bef2FbA5BeeD1cb623D5138f601C',
 } as const
 
 /**
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export const myNftConfig = { address: myNftAddress, abi: myNftABI } as const
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// MyToken
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const myTokenABI = [
-  {
-    stateMutability: 'nonpayable',
-    type: 'constructor',
-    inputs: [{ name: 'baseTokenURI', internalType: 'string', type: 'string' }],
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'approved',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: true,
-      },
-    ],
-    name: 'Approval',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'owner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'operator',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      { name: 'approved', internalType: 'bool', type: 'bool', indexed: false },
-    ],
-    name: 'ApprovalForAll',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-    ],
-    name: 'OwnershipTransferred',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'from', internalType: 'address', type: 'address', indexed: true },
-      { name: 'to', internalType: 'address', type: 'address', indexed: true },
-      {
-        name: 'tokenId',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: true,
-      },
-    ],
-    name: 'Transfer',
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'approve',
-    outputs: [],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'balanceOf',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'getApproved',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'getSVG',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'operator', internalType: 'address', type: 'address' },
-    ],
-    name: 'isApprovedForAll',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-      { name: 'svgData', internalType: 'string', type: 'string' },
-    ],
-    name: 'mintWithSVG',
-    outputs: [],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'name',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ownerOf',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [],
-    name: 'renounceOwnership',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'safeTransferFrom',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-      { name: 'data', internalType: 'bytes', type: 'bytes' },
-    ],
-    name: 'safeTransferFrom',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: 'operator', internalType: 'address', type: 'address' },
-      { name: 'approved', internalType: 'bool', type: 'bool' },
-    ],
-    name: 'setApprovalForAll',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: 'newBaseURI', internalType: 'string', type: 'string' }],
-    name: 'setBaseURI',
-    outputs: [],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'interfaceId', internalType: 'bytes4', type: 'bytes4' }],
-    name: 'supportsInterface',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'symbol',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'index', internalType: 'uint256', type: 'uint256' }],
-    name: 'tokenByIndex',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'index', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'tokenOfOwnerByIndex',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'tokenURI',
-    outputs: [{ name: '', internalType: 'string', type: 'string' }],
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'totalSupply',
-    outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: 'from', internalType: 'address', type: 'address' },
-      { name: 'to', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'transferFrom',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
-    outputs: [],
-  },
-] as const
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Ownable
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const ownableABI = [
-  {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'OwnableInvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'account', internalType: 'address', type: 'address' }],
-    name: 'OwnableUnauthorizedAccount',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'previousOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-      {
-        name: 'newOwner',
-        internalType: 'address',
-        type: 'address',
-        indexed: true,
-      },
-    ],
-    name: 'OwnershipTransferred',
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'owner',
-    outputs: [{ name: '', internalType: 'address', type: 'address' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [],
-    name: 'renounceOwnership',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: 'newOwner', internalType: 'address', type: 'address' }],
-    name: 'transferOwnership',
-    outputs: [],
-  },
-] as const
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Strings
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const stringsABI = [
-  {
-    type: 'error',
-    inputs: [
-      { name: 'value', internalType: 'uint256', type: 'uint256' },
-      { name: 'length', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'StringsInsufficientHexLength',
-  },
-] as const
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Test
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-export const testABI = [
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'string', type: 'string', indexed: false },
-    ],
-    name: 'log',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'address', type: 'address', indexed: false },
-    ],
-    name: 'log_address',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'val',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
-        indexed: false,
-      },
-    ],
-    name: 'log_array',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'val',
-        internalType: 'int256[]',
-        type: 'int256[]',
-        indexed: false,
-      },
-    ],
-    name: 'log_array',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      {
-        name: 'val',
-        internalType: 'address[]',
-        type: 'address[]',
-        indexed: false,
-      },
-    ],
-    name: 'log_array',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'bytes', type: 'bytes', indexed: false },
-    ],
-    name: 'log_bytes',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'bytes32', type: 'bytes32', indexed: false },
-    ],
-    name: 'log_bytes32',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'int256', type: 'int256', indexed: false },
-    ],
-    name: 'log_int',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'address', type: 'address', indexed: false },
-    ],
-    name: 'log_named_address',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      {
-        name: 'val',
-        internalType: 'uint256[]',
-        type: 'uint256[]',
-        indexed: false,
-      },
-    ],
-    name: 'log_named_array',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      {
-        name: 'val',
-        internalType: 'int256[]',
-        type: 'int256[]',
-        indexed: false,
-      },
-    ],
-    name: 'log_named_array',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      {
-        name: 'val',
-        internalType: 'address[]',
-        type: 'address[]',
-        indexed: false,
-      },
-    ],
-    name: 'log_named_array',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'bytes', type: 'bytes', indexed: false },
-    ],
-    name: 'log_named_bytes',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'bytes32', type: 'bytes32', indexed: false },
-    ],
-    name: 'log_named_bytes32',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'int256', type: 'int256', indexed: false },
-      {
-        name: 'decimals',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-    ],
-    name: 'log_named_decimal_int',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'uint256', type: 'uint256', indexed: false },
-      {
-        name: 'decimals',
-        internalType: 'uint256',
-        type: 'uint256',
-        indexed: false,
-      },
-    ],
-    name: 'log_named_decimal_uint',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'int256', type: 'int256', indexed: false },
-    ],
-    name: 'log_named_int',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'string', type: 'string', indexed: false },
-    ],
-    name: 'log_named_string',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: 'key', internalType: 'string', type: 'string', indexed: false },
-      { name: 'val', internalType: 'uint256', type: 'uint256', indexed: false },
-    ],
-    name: 'log_named_uint',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'string', type: 'string', indexed: false },
-    ],
-    name: 'log_string',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'uint256', type: 'uint256', indexed: false },
-    ],
-    name: 'log_uint',
-  },
-  {
-    type: 'event',
-    anonymous: false,
-    inputs: [
-      { name: '', internalType: 'bytes', type: 'bytes', indexed: false },
-    ],
-    name: 'logs',
-  },
-  {
-    stateMutability: 'view',
-    type: 'function',
-    inputs: [],
-    name: 'IS_TEST',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [],
-    name: 'failed',
-    outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-  },
-] as const
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // React
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link counterABI}__.
- */
-export function useCounterRead<
-  TFunctionName extends string,
-  TSelectData = ReadContractResult<typeof counterABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof counterABI, TFunctionName, TSelectData>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: counterABI,
-    ...config,
-  } as UseContractReadConfig<typeof counterABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"number"`.
- */
-export function useCounterNumber<
-  TFunctionName extends 'number',
-  TSelectData = ReadContractResult<typeof counterABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof counterABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: counterABI,
-    functionName: 'number',
-    ...config,
-  } as UseContractReadConfig<typeof counterABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link counterABI}__.
- */
-export function useCounterWrite<
-  TFunctionName extends string,
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<typeof counterABI, string>['request']['abi'],
-        TFunctionName,
-        TMode
-      >
-    : UseContractWriteConfig<typeof counterABI, TFunctionName, TMode> & {
-        abi?: never
-      } = {} as any,
-) {
-  return useContractWrite<typeof counterABI, TFunctionName, TMode>({
-    abi: counterABI,
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"increment"`.
- */
-export function useCounterIncrement<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof counterABI,
-          'increment'
-        >['request']['abi'],
-        'increment',
-        TMode
-      > & { functionName?: 'increment' }
-    : UseContractWriteConfig<typeof counterABI, 'increment', TMode> & {
-        abi?: never
-        functionName?: 'increment'
-      } = {} as any,
-) {
-  return useContractWrite<typeof counterABI, 'increment', TMode>({
-    abi: counterABI,
-    functionName: 'increment',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"setNumber"`.
- */
-export function useCounterSetNumber<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof counterABI,
-          'setNumber'
-        >['request']['abi'],
-        'setNumber',
-        TMode
-      > & { functionName?: 'setNumber' }
-    : UseContractWriteConfig<typeof counterABI, 'setNumber', TMode> & {
-        abi?: never
-        functionName?: 'setNumber'
-      } = {} as any,
-) {
-  return useContractWrite<typeof counterABI, 'setNumber', TMode>({
-    abi: counterABI,
-    functionName: 'setNumber',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"testmethodss"`.
- */
-export function useCounterTestmethodss<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof counterABI,
-          'testmethodss'
-        >['request']['abi'],
-        'testmethodss',
-        TMode
-      > & { functionName?: 'testmethodss' }
-    : UseContractWriteConfig<typeof counterABI, 'testmethodss', TMode> & {
-        abi?: never
-        functionName?: 'testmethodss'
-      } = {} as any,
-) {
-  return useContractWrite<typeof counterABI, 'testmethodss', TMode>({
-    abi: counterABI,
-    functionName: 'testmethodss',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link counterABI}__.
- */
-export function usePrepareCounterWrite<TFunctionName extends string>(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof counterABI, TFunctionName>,
-    'abi'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: counterABI,
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof counterABI, TFunctionName>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"increment"`.
- */
-export function usePrepareCounterIncrement(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof counterABI, 'increment'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: counterABI,
-    functionName: 'increment',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof counterABI, 'increment'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"setNumber"`.
- */
-export function usePrepareCounterSetNumber(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof counterABI, 'setNumber'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: counterABI,
-    functionName: 'setNumber',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof counterABI, 'setNumber'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link counterABI}__ and `functionName` set to `"testmethodss"`.
- */
-export function usePrepareCounterTestmethodss(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof counterABI, 'testmethodss'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: counterABI,
-    functionName: 'testmethodss',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof counterABI, 'testmethodss'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link counterABI}__.
- */
-export function useCounterEvent<TEventName extends string>(
-  config: Omit<
-    UseContractEventConfig<typeof counterABI, TEventName>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: counterABI,
-    ...config,
-  } as UseContractEventConfig<typeof counterABI, TEventName>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link counterABI}__ and `eventName` set to `"Transfer"`.
- */
-export function useCounterTransferEvent(
-  config: Omit<
-    UseContractEventConfig<typeof counterABI, 'Transfer'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: counterABI,
-    eventName: 'Transfer',
-    ...config,
-  } as UseContractEventConfig<typeof counterABI, 'Transfer'>)
-}
 
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link erc165ABI}__.
@@ -5363,7 +4322,7 @@ export function usePrepareIerc721ReceiverOnErc721Received(
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftRead<
   TFunctionName extends string,
@@ -5384,7 +4343,7 @@ export function useMyNftRead<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"balanceOf"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftBalanceOf<
   TFunctionName extends 'balanceOf',
@@ -5406,7 +4365,7 @@ export function useMyNftBalanceOf<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"getApproved"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftGetApproved<
   TFunctionName extends 'getApproved',
@@ -5428,7 +4387,7 @@ export function useMyNftGetApproved<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"isApprovedForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftIsApprovedForAll<
   TFunctionName extends 'isApprovedForAll',
@@ -5450,7 +4409,7 @@ export function useMyNftIsApprovedForAll<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"name"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftName<
   TFunctionName extends 'name',
@@ -5470,31 +4429,9 @@ export function useMyNftName<
 }
 
 /**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"owner"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
- */
-export function useMyNftOwner<
-  TFunctionName extends 'owner',
-  TSelectData = ReadContractResult<typeof myNftABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myNftABI, TFunctionName, TSelectData>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return useContractRead({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'owner',
-    ...config,
-  } as UseContractReadConfig<typeof myNftABI, TFunctionName, TSelectData>)
-}
-
-/**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"ownerOf"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftOwnerOf<
   TFunctionName extends 'ownerOf',
@@ -5516,7 +4453,7 @@ export function useMyNftOwnerOf<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"supportsInterface"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSupportsInterface<
   TFunctionName extends 'supportsInterface',
@@ -5538,7 +4475,7 @@ export function useMyNftSupportsInterface<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"symbol"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSymbol<
   TFunctionName extends 'symbol',
@@ -5560,7 +4497,7 @@ export function useMyNftSymbol<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"tokenByIndex"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftTokenByIndex<
   TFunctionName extends 'tokenByIndex',
@@ -5582,7 +4519,7 @@ export function useMyNftTokenByIndex<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"tokenOfOwnerByIndex"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftTokenOfOwnerByIndex<
   TFunctionName extends 'tokenOfOwnerByIndex',
@@ -5604,7 +4541,7 @@ export function useMyNftTokenOfOwnerByIndex<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"tokenURI"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftTokenUri<
   TFunctionName extends 'tokenURI',
@@ -5626,7 +4563,7 @@ export function useMyNftTokenUri<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"totalSupply"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftTotalSupply<
   TFunctionName extends 'totalSupply',
@@ -5648,7 +4585,7 @@ export function useMyNftTotalSupply<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftWrite<
   TFunctionName extends string,
@@ -5677,7 +4614,7 @@ export function useMyNftWrite<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"approve"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftApprove<
   TMode extends WriteContractMode = undefined,
@@ -5710,7 +4647,7 @@ export function useMyNftApprove<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"mint"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftMint<
   TMode extends WriteContractMode = undefined,
@@ -5738,46 +4675,9 @@ export function useMyNftMint<
 }
 
 /**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"renounceOwnership"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
- */
-export function useMyNftRenounceOwnership<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'renounceOwnership'
-        >['request']['abi'],
-        'renounceOwnership',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'renounceOwnership'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'renounceOwnership', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'renounceOwnership'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'renounceOwnership', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'renounceOwnership',
-    ...config,
-  } as any)
-}
-
-/**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"safeTransferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSafeTransferFrom<
   TMode extends WriteContractMode = undefined,
@@ -5814,7 +4714,7 @@ export function useMyNftSafeTransferFrom<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setApprovalForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetApprovalForAll<
   TMode extends WriteContractMode = undefined,
@@ -5851,7 +4751,7 @@ export function useMyNftSetApprovalForAll<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setBackgroundColor"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetBackgroundColor<
   TMode extends WriteContractMode = undefined,
@@ -5888,7 +4788,7 @@ export function useMyNftSetBackgroundColor<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo1<
   TMode extends WriteContractMode = undefined,
@@ -5921,7 +4821,7 @@ export function useMyNftSetLogo1<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo1Background<
   TMode extends WriteContractMode = undefined,
@@ -5958,7 +4858,7 @@ export function useMyNftSetLogo1Background<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo1Degrees<
   TMode extends WriteContractMode = undefined,
@@ -5995,7 +4895,7 @@ export function useMyNftSetLogo1Degrees<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo1Foreground<
   TMode extends WriteContractMode = undefined,
@@ -6032,7 +4932,7 @@ export function useMyNftSetLogo1Foreground<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo2<
   TMode extends WriteContractMode = undefined,
@@ -6065,7 +4965,7 @@ export function useMyNftSetLogo2<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo2Background<
   TMode extends WriteContractMode = undefined,
@@ -6102,7 +5002,7 @@ export function useMyNftSetLogo2Background<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo2Degrees<
   TMode extends WriteContractMode = undefined,
@@ -6139,7 +5039,7 @@ export function useMyNftSetLogo2Degrees<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo2Foreground<
   TMode extends WriteContractMode = undefined,
@@ -6176,7 +5076,7 @@ export function useMyNftSetLogo2Foreground<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo3<
   TMode extends WriteContractMode = undefined,
@@ -6209,7 +5109,7 @@ export function useMyNftSetLogo3<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo3Background<
   TMode extends WriteContractMode = undefined,
@@ -6246,7 +5146,7 @@ export function useMyNftSetLogo3Background<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo3Degrees<
   TMode extends WriteContractMode = undefined,
@@ -6283,7 +5183,7 @@ export function useMyNftSetLogo3Degrees<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo3Foreground<
   TMode extends WriteContractMode = undefined,
@@ -6320,7 +5220,7 @@ export function useMyNftSetLogo3Foreground<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo4<
   TMode extends WriteContractMode = undefined,
@@ -6353,7 +5253,7 @@ export function useMyNftSetLogo4<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo4Background<
   TMode extends WriteContractMode = undefined,
@@ -6390,7 +5290,7 @@ export function useMyNftSetLogo4Background<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo4Degrees<
   TMode extends WriteContractMode = undefined,
@@ -6427,7 +5327,7 @@ export function useMyNftSetLogo4Degrees<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftSetLogo4Foreground<
   TMode extends WriteContractMode = undefined,
@@ -6464,7 +5364,7 @@ export function useMyNftSetLogo4Foreground<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"transferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftTransferFrom<
   TMode extends WriteContractMode = undefined,
@@ -6499,46 +5399,9 @@ export function useMyNftTransferFrom<
 }
 
 /**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"transferOwnership"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
- */
-export function useMyNftTransferOwnership<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'transferOwnership'
-        >['request']['abi'],
-        'transferOwnership',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'transferOwnership'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'transferOwnership', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'transferOwnership'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'transferOwnership', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'transferOwnership',
-    ...config,
-  } as any)
-}
-
-/**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftWrite<TFunctionName extends string>(
   config: Omit<
@@ -6556,7 +5419,7 @@ export function usePrepareMyNftWrite<TFunctionName extends string>(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"approve"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftApprove(
   config: Omit<
@@ -6575,7 +5438,7 @@ export function usePrepareMyNftApprove(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"mint"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftMint(
   config: Omit<
@@ -6592,28 +5455,9 @@ export function usePrepareMyNftMint(
 }
 
 /**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"renounceOwnership"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
- */
-export function usePrepareMyNftRenounceOwnership(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'renounceOwnership'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'renounceOwnership',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'renounceOwnership'>)
-}
-
-/**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"safeTransferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSafeTransferFrom(
   config: Omit<
@@ -6632,7 +5476,7 @@ export function usePrepareMyNftSafeTransferFrom(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setApprovalForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetApprovalForAll(
   config: Omit<
@@ -6651,7 +5495,7 @@ export function usePrepareMyNftSetApprovalForAll(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setBackgroundColor"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetBackgroundColor(
   config: Omit<
@@ -6670,7 +5514,7 @@ export function usePrepareMyNftSetBackgroundColor(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo1(
   config: Omit<
@@ -6689,7 +5533,7 @@ export function usePrepareMyNftSetLogo1(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo1Background(
   config: Omit<
@@ -6708,7 +5552,7 @@ export function usePrepareMyNftSetLogo1Background(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo1Degrees(
   config: Omit<
@@ -6727,7 +5571,7 @@ export function usePrepareMyNftSetLogo1Degrees(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo1Foreground(
   config: Omit<
@@ -6746,7 +5590,7 @@ export function usePrepareMyNftSetLogo1Foreground(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo2(
   config: Omit<
@@ -6765,7 +5609,7 @@ export function usePrepareMyNftSetLogo2(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo2Background(
   config: Omit<
@@ -6784,7 +5628,7 @@ export function usePrepareMyNftSetLogo2Background(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo2Degrees(
   config: Omit<
@@ -6803,7 +5647,7 @@ export function usePrepareMyNftSetLogo2Degrees(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo2Foreground(
   config: Omit<
@@ -6822,7 +5666,7 @@ export function usePrepareMyNftSetLogo2Foreground(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo3(
   config: Omit<
@@ -6841,7 +5685,7 @@ export function usePrepareMyNftSetLogo3(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo3Background(
   config: Omit<
@@ -6860,7 +5704,7 @@ export function usePrepareMyNftSetLogo3Background(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo3Degrees(
   config: Omit<
@@ -6879,7 +5723,7 @@ export function usePrepareMyNftSetLogo3Degrees(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo3Foreground(
   config: Omit<
@@ -6898,7 +5742,7 @@ export function usePrepareMyNftSetLogo3Foreground(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo4(
   config: Omit<
@@ -6917,7 +5761,7 @@ export function usePrepareMyNftSetLogo4(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Background"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo4Background(
   config: Omit<
@@ -6936,7 +5780,7 @@ export function usePrepareMyNftSetLogo4Background(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Degrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo4Degrees(
   config: Omit<
@@ -6955,7 +5799,7 @@ export function usePrepareMyNftSetLogo4Degrees(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Foreground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftSetLogo4Foreground(
   config: Omit<
@@ -6974,7 +5818,7 @@ export function usePrepareMyNftSetLogo4Foreground(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"transferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function usePrepareMyNftTransferFrom(
   config: Omit<
@@ -6991,28 +5835,9 @@ export function usePrepareMyNftTransferFrom(
 }
 
 /**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"transferOwnership"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
- */
-export function usePrepareMyNftTransferOwnership(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'transferOwnership'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'transferOwnership',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'transferOwnership'>)
-}
-
-/**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftEvent<TEventName extends string>(
   config: Omit<
@@ -7030,7 +5855,7 @@ export function useMyNftEvent<TEventName extends string>(
 /**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"Approval"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftApprovalEvent(
   config: Omit<
@@ -7049,7 +5874,7 @@ export function useMyNftApprovalEvent(
 /**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"ApprovalForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftApprovalForAllEvent(
   config: Omit<
@@ -7066,28 +5891,9 @@ export function useMyNftApprovalForAllEvent(
 }
 
 /**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"OwnershipTransferred"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
- */
-export function useMyNftOwnershipTransferredEvent(
-  config: Omit<
-    UseContractEventConfig<typeof myNftABI, 'OwnershipTransferred'>,
-    'abi' | 'address' | 'eventName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return useContractEvent({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    eventName: 'OwnershipTransferred',
-    ...config,
-  } as UseContractEventConfig<typeof myNftABI, 'OwnershipTransferred'>)
-}
-
-/**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"Transfer"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0x98fa892913006a636052c3c48c2b2f59c2ef39c0)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
  */
 export function useMyNftTransferEvent(
   config: Omit<
@@ -7101,1337 +5907,4 @@ export function useMyNftTransferEvent(
     eventName: 'Transfer',
     ...config,
   } as UseContractEventConfig<typeof myNftABI, 'Transfer'>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__.
- */
-export function useMyTokenRead<
-  TFunctionName extends string,
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"balanceOf"`.
- */
-export function useMyTokenBalanceOf<
-  TFunctionName extends 'balanceOf',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'balanceOf',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"getApproved"`.
- */
-export function useMyTokenGetApproved<
-  TFunctionName extends 'getApproved',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'getApproved',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"getSVG"`.
- */
-export function useMyTokenGetSvg<
-  TFunctionName extends 'getSVG',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'getSVG',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"isApprovedForAll"`.
- */
-export function useMyTokenIsApprovedForAll<
-  TFunctionName extends 'isApprovedForAll',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'isApprovedForAll',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"name"`.
- */
-export function useMyTokenName<
-  TFunctionName extends 'name',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'name',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"owner"`.
- */
-export function useMyTokenOwner<
-  TFunctionName extends 'owner',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'owner',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"ownerOf"`.
- */
-export function useMyTokenOwnerOf<
-  TFunctionName extends 'ownerOf',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'ownerOf',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"supportsInterface"`.
- */
-export function useMyTokenSupportsInterface<
-  TFunctionName extends 'supportsInterface',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'supportsInterface',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"symbol"`.
- */
-export function useMyTokenSymbol<
-  TFunctionName extends 'symbol',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'symbol',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"tokenByIndex"`.
- */
-export function useMyTokenTokenByIndex<
-  TFunctionName extends 'tokenByIndex',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'tokenByIndex',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"tokenOfOwnerByIndex"`.
- */
-export function useMyTokenTokenOfOwnerByIndex<
-  TFunctionName extends 'tokenOfOwnerByIndex',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'tokenOfOwnerByIndex',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"tokenURI"`.
- */
-export function useMyTokenTokenUri<
-  TFunctionName extends 'tokenURI',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'tokenURI',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"totalSupply"`.
- */
-export function useMyTokenTotalSupply<
-  TFunctionName extends 'totalSupply',
-  TSelectData = ReadContractResult<typeof myTokenABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: myTokenABI,
-    functionName: 'totalSupply',
-    ...config,
-  } as UseContractReadConfig<typeof myTokenABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__.
- */
-export function useMyTokenWrite<
-  TFunctionName extends string,
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<typeof myTokenABI, string>['request']['abi'],
-        TFunctionName,
-        TMode
-      >
-    : UseContractWriteConfig<typeof myTokenABI, TFunctionName, TMode> & {
-        abi?: never
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, TFunctionName, TMode>({
-    abi: myTokenABI,
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"approve"`.
- */
-export function useMyTokenApprove<TMode extends WriteContractMode = undefined>(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'approve'
-        >['request']['abi'],
-        'approve',
-        TMode
-      > & { functionName?: 'approve' }
-    : UseContractWriteConfig<typeof myTokenABI, 'approve', TMode> & {
-        abi?: never
-        functionName?: 'approve'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'approve', TMode>({
-    abi: myTokenABI,
-    functionName: 'approve',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"mintWithSVG"`.
- */
-export function useMyTokenMintWithSvg<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'mintWithSVG'
-        >['request']['abi'],
-        'mintWithSVG',
-        TMode
-      > & { functionName?: 'mintWithSVG' }
-    : UseContractWriteConfig<typeof myTokenABI, 'mintWithSVG', TMode> & {
-        abi?: never
-        functionName?: 'mintWithSVG'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'mintWithSVG', TMode>({
-    abi: myTokenABI,
-    functionName: 'mintWithSVG',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"renounceOwnership"`.
- */
-export function useMyTokenRenounceOwnership<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'renounceOwnership'
-        >['request']['abi'],
-        'renounceOwnership',
-        TMode
-      > & { functionName?: 'renounceOwnership' }
-    : UseContractWriteConfig<typeof myTokenABI, 'renounceOwnership', TMode> & {
-        abi?: never
-        functionName?: 'renounceOwnership'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'renounceOwnership', TMode>({
-    abi: myTokenABI,
-    functionName: 'renounceOwnership',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"safeTransferFrom"`.
- */
-export function useMyTokenSafeTransferFrom<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'safeTransferFrom'
-        >['request']['abi'],
-        'safeTransferFrom',
-        TMode
-      > & { functionName?: 'safeTransferFrom' }
-    : UseContractWriteConfig<typeof myTokenABI, 'safeTransferFrom', TMode> & {
-        abi?: never
-        functionName?: 'safeTransferFrom'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'safeTransferFrom', TMode>({
-    abi: myTokenABI,
-    functionName: 'safeTransferFrom',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"setApprovalForAll"`.
- */
-export function useMyTokenSetApprovalForAll<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'setApprovalForAll'
-        >['request']['abi'],
-        'setApprovalForAll',
-        TMode
-      > & { functionName?: 'setApprovalForAll' }
-    : UseContractWriteConfig<typeof myTokenABI, 'setApprovalForAll', TMode> & {
-        abi?: never
-        functionName?: 'setApprovalForAll'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'setApprovalForAll', TMode>({
-    abi: myTokenABI,
-    functionName: 'setApprovalForAll',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"setBaseURI"`.
- */
-export function useMyTokenSetBaseUri<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'setBaseURI'
-        >['request']['abi'],
-        'setBaseURI',
-        TMode
-      > & { functionName?: 'setBaseURI' }
-    : UseContractWriteConfig<typeof myTokenABI, 'setBaseURI', TMode> & {
-        abi?: never
-        functionName?: 'setBaseURI'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'setBaseURI', TMode>({
-    abi: myTokenABI,
-    functionName: 'setBaseURI',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"transferFrom"`.
- */
-export function useMyTokenTransferFrom<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'transferFrom'
-        >['request']['abi'],
-        'transferFrom',
-        TMode
-      > & { functionName?: 'transferFrom' }
-    : UseContractWriteConfig<typeof myTokenABI, 'transferFrom', TMode> & {
-        abi?: never
-        functionName?: 'transferFrom'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'transferFrom', TMode>({
-    abi: myTokenABI,
-    functionName: 'transferFrom',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"transferOwnership"`.
- */
-export function useMyTokenTransferOwnership<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myTokenABI,
-          'transferOwnership'
-        >['request']['abi'],
-        'transferOwnership',
-        TMode
-      > & { functionName?: 'transferOwnership' }
-    : UseContractWriteConfig<typeof myTokenABI, 'transferOwnership', TMode> & {
-        abi?: never
-        functionName?: 'transferOwnership'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myTokenABI, 'transferOwnership', TMode>({
-    abi: myTokenABI,
-    functionName: 'transferOwnership',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__.
- */
-export function usePrepareMyTokenWrite<TFunctionName extends string>(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, TFunctionName>,
-    'abi'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, TFunctionName>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"approve"`.
- */
-export function usePrepareMyTokenApprove(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'approve'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'approve',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'approve'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"mintWithSVG"`.
- */
-export function usePrepareMyTokenMintWithSvg(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'mintWithSVG'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'mintWithSVG',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'mintWithSVG'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"renounceOwnership"`.
- */
-export function usePrepareMyTokenRenounceOwnership(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'renounceOwnership'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'renounceOwnership',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'renounceOwnership'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"safeTransferFrom"`.
- */
-export function usePrepareMyTokenSafeTransferFrom(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'safeTransferFrom'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'safeTransferFrom',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'safeTransferFrom'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"setApprovalForAll"`.
- */
-export function usePrepareMyTokenSetApprovalForAll(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'setApprovalForAll'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'setApprovalForAll',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'setApprovalForAll'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"setBaseURI"`.
- */
-export function usePrepareMyTokenSetBaseUri(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'setBaseURI'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'setBaseURI',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'setBaseURI'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"transferFrom"`.
- */
-export function usePrepareMyTokenTransferFrom(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'transferFrom'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'transferFrom',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'transferFrom'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myTokenABI}__ and `functionName` set to `"transferOwnership"`.
- */
-export function usePrepareMyTokenTransferOwnership(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myTokenABI, 'transferOwnership'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myTokenABI,
-    functionName: 'transferOwnership',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myTokenABI, 'transferOwnership'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myTokenABI}__.
- */
-export function useMyTokenEvent<TEventName extends string>(
-  config: Omit<
-    UseContractEventConfig<typeof myTokenABI, TEventName>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: myTokenABI,
-    ...config,
-  } as UseContractEventConfig<typeof myTokenABI, TEventName>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myTokenABI}__ and `eventName` set to `"Approval"`.
- */
-export function useMyTokenApprovalEvent(
-  config: Omit<
-    UseContractEventConfig<typeof myTokenABI, 'Approval'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: myTokenABI,
-    eventName: 'Approval',
-    ...config,
-  } as UseContractEventConfig<typeof myTokenABI, 'Approval'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myTokenABI}__ and `eventName` set to `"ApprovalForAll"`.
- */
-export function useMyTokenApprovalForAllEvent(
-  config: Omit<
-    UseContractEventConfig<typeof myTokenABI, 'ApprovalForAll'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: myTokenABI,
-    eventName: 'ApprovalForAll',
-    ...config,
-  } as UseContractEventConfig<typeof myTokenABI, 'ApprovalForAll'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myTokenABI}__ and `eventName` set to `"OwnershipTransferred"`.
- */
-export function useMyTokenOwnershipTransferredEvent(
-  config: Omit<
-    UseContractEventConfig<typeof myTokenABI, 'OwnershipTransferred'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: myTokenABI,
-    eventName: 'OwnershipTransferred',
-    ...config,
-  } as UseContractEventConfig<typeof myTokenABI, 'OwnershipTransferred'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myTokenABI}__ and `eventName` set to `"Transfer"`.
- */
-export function useMyTokenTransferEvent(
-  config: Omit<
-    UseContractEventConfig<typeof myTokenABI, 'Transfer'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: myTokenABI,
-    eventName: 'Transfer',
-    ...config,
-  } as UseContractEventConfig<typeof myTokenABI, 'Transfer'>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link ownableABI}__.
- */
-export function useOwnableRead<
-  TFunctionName extends string,
-  TSelectData = ReadContractResult<typeof ownableABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof ownableABI, TFunctionName, TSelectData>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: ownableABI,
-    ...config,
-  } as UseContractReadConfig<typeof ownableABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link ownableABI}__ and `functionName` set to `"owner"`.
- */
-export function useOwnableOwner<
-  TFunctionName extends 'owner',
-  TSelectData = ReadContractResult<typeof ownableABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof ownableABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: ownableABI,
-    functionName: 'owner',
-    ...config,
-  } as UseContractReadConfig<typeof ownableABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link ownableABI}__.
- */
-export function useOwnableWrite<
-  TFunctionName extends string,
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<typeof ownableABI, string>['request']['abi'],
-        TFunctionName,
-        TMode
-      >
-    : UseContractWriteConfig<typeof ownableABI, TFunctionName, TMode> & {
-        abi?: never
-      } = {} as any,
-) {
-  return useContractWrite<typeof ownableABI, TFunctionName, TMode>({
-    abi: ownableABI,
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link ownableABI}__ and `functionName` set to `"renounceOwnership"`.
- */
-export function useOwnableRenounceOwnership<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof ownableABI,
-          'renounceOwnership'
-        >['request']['abi'],
-        'renounceOwnership',
-        TMode
-      > & { functionName?: 'renounceOwnership' }
-    : UseContractWriteConfig<typeof ownableABI, 'renounceOwnership', TMode> & {
-        abi?: never
-        functionName?: 'renounceOwnership'
-      } = {} as any,
-) {
-  return useContractWrite<typeof ownableABI, 'renounceOwnership', TMode>({
-    abi: ownableABI,
-    functionName: 'renounceOwnership',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link ownableABI}__ and `functionName` set to `"transferOwnership"`.
- */
-export function useOwnableTransferOwnership<
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof ownableABI,
-          'transferOwnership'
-        >['request']['abi'],
-        'transferOwnership',
-        TMode
-      > & { functionName?: 'transferOwnership' }
-    : UseContractWriteConfig<typeof ownableABI, 'transferOwnership', TMode> & {
-        abi?: never
-        functionName?: 'transferOwnership'
-      } = {} as any,
-) {
-  return useContractWrite<typeof ownableABI, 'transferOwnership', TMode>({
-    abi: ownableABI,
-    functionName: 'transferOwnership',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link ownableABI}__.
- */
-export function usePrepareOwnableWrite<TFunctionName extends string>(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof ownableABI, TFunctionName>,
-    'abi'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: ownableABI,
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof ownableABI, TFunctionName>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link ownableABI}__ and `functionName` set to `"renounceOwnership"`.
- */
-export function usePrepareOwnableRenounceOwnership(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof ownableABI, 'renounceOwnership'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: ownableABI,
-    functionName: 'renounceOwnership',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof ownableABI, 'renounceOwnership'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link ownableABI}__ and `functionName` set to `"transferOwnership"`.
- */
-export function usePrepareOwnableTransferOwnership(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof ownableABI, 'transferOwnership'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: ownableABI,
-    functionName: 'transferOwnership',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof ownableABI, 'transferOwnership'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link ownableABI}__.
- */
-export function useOwnableEvent<TEventName extends string>(
-  config: Omit<
-    UseContractEventConfig<typeof ownableABI, TEventName>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: ownableABI,
-    ...config,
-  } as UseContractEventConfig<typeof ownableABI, TEventName>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link ownableABI}__ and `eventName` set to `"OwnershipTransferred"`.
- */
-export function useOwnableOwnershipTransferredEvent(
-  config: Omit<
-    UseContractEventConfig<typeof ownableABI, 'OwnershipTransferred'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: ownableABI,
-    eventName: 'OwnershipTransferred',
-    ...config,
-  } as UseContractEventConfig<typeof ownableABI, 'OwnershipTransferred'>)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link testABI}__.
- */
-export function useTestRead<
-  TFunctionName extends string,
-  TSelectData = ReadContractResult<typeof testABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof testABI, TFunctionName, TSelectData>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractRead({ abi: testABI, ...config } as UseContractReadConfig<
-    typeof testABI,
-    TFunctionName,
-    TSelectData
-  >)
-}
-
-/**
- * Wraps __{@link useContractRead}__ with `abi` set to __{@link testABI}__ and `functionName` set to `"IS_TEST"`.
- */
-export function useTestIsTest<
-  TFunctionName extends 'IS_TEST',
-  TSelectData = ReadContractResult<typeof testABI, TFunctionName>,
->(
-  config: Omit<
-    UseContractReadConfig<typeof testABI, TFunctionName, TSelectData>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return useContractRead({
-    abi: testABI,
-    functionName: 'IS_TEST',
-    ...config,
-  } as UseContractReadConfig<typeof testABI, TFunctionName, TSelectData>)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link testABI}__.
- */
-export function useTestWrite<
-  TFunctionName extends string,
-  TMode extends WriteContractMode = undefined,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<typeof testABI, string>['request']['abi'],
-        TFunctionName,
-        TMode
-      >
-    : UseContractWriteConfig<typeof testABI, TFunctionName, TMode> & {
-        abi?: never
-      } = {} as any,
-) {
-  return useContractWrite<typeof testABI, TFunctionName, TMode>({
-    abi: testABI,
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link testABI}__ and `functionName` set to `"failed"`.
- */
-export function useTestFailed<TMode extends WriteContractMode = undefined>(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<typeof testABI, 'failed'>['request']['abi'],
-        'failed',
-        TMode
-      > & { functionName?: 'failed' }
-    : UseContractWriteConfig<typeof testABI, 'failed', TMode> & {
-        abi?: never
-        functionName?: 'failed'
-      } = {} as any,
-) {
-  return useContractWrite<typeof testABI, 'failed', TMode>({
-    abi: testABI,
-    functionName: 'failed',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link testABI}__.
- */
-export function usePrepareTestWrite<TFunctionName extends string>(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof testABI, TFunctionName>,
-    'abi'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: testABI,
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof testABI, TFunctionName>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link testABI}__ and `functionName` set to `"failed"`.
- */
-export function usePrepareTestFailed(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof testABI, 'failed'>,
-    'abi' | 'functionName'
-  > = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: testABI,
-    functionName: 'failed',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof testABI, 'failed'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__.
- */
-export function useTestEvent<TEventName extends string>(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, TEventName>,
-    'abi'
-  > = {} as any,
-) {
-  return useContractEvent({ abi: testABI, ...config } as UseContractEventConfig<
-    typeof testABI,
-    TEventName
-  >)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log"`.
- */
-export function useTestLogEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_address"`.
- */
-export function useTestLogAddressEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_address'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_address',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_address'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_array"`.
- */
-export function useTestLogArrayEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_array'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_array',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_array'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_bytes"`.
- */
-export function useTestLogBytesEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_bytes'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_bytes',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_bytes'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_bytes32"`.
- */
-export function useTestLogBytes32Event(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_bytes32'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_bytes32',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_bytes32'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_int"`.
- */
-export function useTestLogIntEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_int'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_int',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_int'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_address"`.
- */
-export function useTestLogNamedAddressEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_address'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_address',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_address'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_array"`.
- */
-export function useTestLogNamedArrayEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_array'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_array',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_array'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_bytes"`.
- */
-export function useTestLogNamedBytesEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_bytes'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_bytes',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_bytes'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_bytes32"`.
- */
-export function useTestLogNamedBytes32Event(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_bytes32'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_bytes32',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_bytes32'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_decimal_int"`.
- */
-export function useTestLogNamedDecimalIntEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_decimal_int'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_decimal_int',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_decimal_int'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_decimal_uint"`.
- */
-export function useTestLogNamedDecimalUintEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_decimal_uint'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_decimal_uint',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_decimal_uint'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_int"`.
- */
-export function useTestLogNamedIntEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_int'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_int',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_int'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_string"`.
- */
-export function useTestLogNamedStringEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_string'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_string',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_string'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_named_uint"`.
- */
-export function useTestLogNamedUintEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_named_uint'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_named_uint',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_named_uint'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_string"`.
- */
-export function useTestLogStringEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_string'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_string',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_string'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"log_uint"`.
- */
-export function useTestLogUintEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'log_uint'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'log_uint',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'log_uint'>)
-}
-
-/**
- * Wraps __{@link useContractEvent}__ with `abi` set to __{@link testABI}__ and `eventName` set to `"logs"`.
- */
-export function useTestLogsEvent(
-  config: Omit<
-    UseContractEventConfig<typeof testABI, 'logs'>,
-    'abi' | 'eventName'
-  > = {} as any,
-) {
-  return useContractEvent({
-    abi: testABI,
-    eventName: 'logs',
-    ...config,
-  } as UseContractEventConfig<typeof testABI, 'logs'>)
 }

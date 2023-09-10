@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.3",
+    "@rainbow-me/rainbowkit": "^1.0.11",
     "@wagmi/cli": "^1.0.0",
     "buffer": "^6.0.3",
     "process": "^0.11.10",
