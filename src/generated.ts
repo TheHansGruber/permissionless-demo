@@ -1133,66 +1133,10 @@ export const ierc721ReceiverABI = [
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export const myNftABI = [
   { stateMutability: 'nonpayable', type: 'constructor', inputs: [] },
-  { type: 'error', inputs: [], name: 'ERC721EnumerableForbiddenBatchMint' },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'sender', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-      { name: 'owner', internalType: 'address', type: 'address' },
-    ],
-    name: 'ERC721IncorrectOwner',
-  },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'operator', internalType: 'address', type: 'address' },
-      { name: 'tokenId', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'ERC721InsufficientApproval',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'approver', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidApprover',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'operator', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidOperator',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'owner', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidOwner',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'receiver', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidReceiver',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'sender', internalType: 'address', type: 'address' }],
-    name: 'ERC721InvalidSender',
-  },
-  {
-    type: 'error',
-    inputs: [{ name: 'tokenId', internalType: 'uint256', type: 'uint256' }],
-    name: 'ERC721NonexistentToken',
-  },
-  {
-    type: 'error',
-    inputs: [
-      { name: 'owner', internalType: 'address', type: 'address' },
-      { name: 'index', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'ERC721OutOfBoundsIndex',
-  },
   {
     type: 'event',
     anonymous: false,
@@ -1354,144 +1298,42 @@ export const myNftABI = [
     stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
+      { name: 'index', internalType: 'uint256', type: 'uint256' },
       { name: '_backgroundColor', internalType: 'string', type: 'string' },
       { name: '_foregroundColor', internalType: 'string', type: 'string' },
       { name: '_degrees', internalType: 'uint256', type: 'uint256' },
     ],
-    name: 'setLogo1',
+    name: 'setLogo',
     outputs: [],
   },
   {
     stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
+      { name: 'index', internalType: 'uint256', type: 'uint256' },
       { name: '_backgroundColor', internalType: 'string', type: 'string' },
     ],
-    name: 'setLogo1Background',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: '_degrees', internalType: 'uint256', type: 'uint256' }],
-    name: 'setLogo1Degrees',
+    name: 'setLogoBackground',
     outputs: [],
   },
   {
     stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
-      { name: '_foregroundColor', internalType: 'string', type: 'string' },
-    ],
-    name: 'setLogo1Foreground',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_backgroundColor', internalType: 'string', type: 'string' },
-      { name: '_foregroundColor', internalType: 'string', type: 'string' },
+      { name: 'index', internalType: 'uint256', type: 'uint256' },
       { name: '_degrees', internalType: 'uint256', type: 'uint256' },
     ],
-    name: 'setLogo2',
+    name: 'setLogoDegrees',
     outputs: [],
   },
   {
     stateMutability: 'nonpayable',
     type: 'function',
     inputs: [
-      { name: '_backgroundColor', internalType: 'string', type: 'string' },
-    ],
-    name: 'setLogo2Background',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: '_degrees', internalType: 'uint256', type: 'uint256' }],
-    name: 'setLogo2Degrees',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
+      { name: 'index', internalType: 'uint256', type: 'uint256' },
       { name: '_foregroundColor', internalType: 'string', type: 'string' },
     ],
-    name: 'setLogo2Foreground',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_backgroundColor', internalType: 'string', type: 'string' },
-      { name: '_foregroundColor', internalType: 'string', type: 'string' },
-      { name: '_degrees', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'setLogo3',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_backgroundColor', internalType: 'string', type: 'string' },
-    ],
-    name: 'setLogo3Background',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: '_degrees', internalType: 'uint256', type: 'uint256' }],
-    name: 'setLogo3Degrees',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_foregroundColor', internalType: 'string', type: 'string' },
-    ],
-    name: 'setLogo3Foreground',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_backgroundColor', internalType: 'string', type: 'string' },
-      { name: '_foregroundColor', internalType: 'string', type: 'string' },
-      { name: '_degrees', internalType: 'uint256', type: 'uint256' },
-    ],
-    name: 'setLogo4',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_backgroundColor', internalType: 'string', type: 'string' },
-    ],
-    name: 'setLogo4Background',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [{ name: '_degrees', internalType: 'uint256', type: 'uint256' }],
-    name: 'setLogo4Degrees',
-    outputs: [],
-  },
-  {
-    stateMutability: 'nonpayable',
-    type: 'function',
-    inputs: [
-      { name: '_foregroundColor', internalType: 'string', type: 'string' },
-    ],
-    name: 'setLogo4Foreground',
+    name: 'setLogoForeground',
     outputs: [],
   },
   {
@@ -1553,14 +1395,14 @@ export const myNftABI = [
 ] as const
 
 /**
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export const myNftAddress = {
-  84531: '0xAc88df20C094Bef2FbA5BeeD1cb623D5138f601C',
+  84531: '0xa26598928e7a402E745f9Fe048Ec7404189303e2',
 } as const
 
 /**
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export const myNftConfig = { address: myNftAddress, abi: myNftABI } as const
 
@@ -4322,7 +4164,7 @@ export function usePrepareIerc721ReceiverOnErc721Received(
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftRead<
   TFunctionName extends string,
@@ -4343,7 +4185,7 @@ export function useMyNftRead<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"balanceOf"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftBalanceOf<
   TFunctionName extends 'balanceOf',
@@ -4365,7 +4207,7 @@ export function useMyNftBalanceOf<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"getApproved"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftGetApproved<
   TFunctionName extends 'getApproved',
@@ -4387,7 +4229,7 @@ export function useMyNftGetApproved<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"isApprovedForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftIsApprovedForAll<
   TFunctionName extends 'isApprovedForAll',
@@ -4409,7 +4251,7 @@ export function useMyNftIsApprovedForAll<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"name"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftName<
   TFunctionName extends 'name',
@@ -4431,7 +4273,7 @@ export function useMyNftName<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"ownerOf"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftOwnerOf<
   TFunctionName extends 'ownerOf',
@@ -4453,7 +4295,7 @@ export function useMyNftOwnerOf<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"supportsInterface"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftSupportsInterface<
   TFunctionName extends 'supportsInterface',
@@ -4475,7 +4317,7 @@ export function useMyNftSupportsInterface<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"symbol"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftSymbol<
   TFunctionName extends 'symbol',
@@ -4497,7 +4339,7 @@ export function useMyNftSymbol<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"tokenByIndex"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftTokenByIndex<
   TFunctionName extends 'tokenByIndex',
@@ -4519,7 +4361,7 @@ export function useMyNftTokenByIndex<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"tokenOfOwnerByIndex"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftTokenOfOwnerByIndex<
   TFunctionName extends 'tokenOfOwnerByIndex',
@@ -4541,7 +4383,7 @@ export function useMyNftTokenOfOwnerByIndex<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"tokenURI"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftTokenUri<
   TFunctionName extends 'tokenURI',
@@ -4563,7 +4405,7 @@ export function useMyNftTokenUri<
 /**
  * Wraps __{@link useContractRead}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"totalSupply"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftTotalSupply<
   TFunctionName extends 'totalSupply',
@@ -4585,7 +4427,7 @@ export function useMyNftTotalSupply<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftWrite<
   TFunctionName extends string,
@@ -4614,7 +4456,7 @@ export function useMyNftWrite<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"approve"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftApprove<
   TMode extends WriteContractMode = undefined,
@@ -4647,7 +4489,7 @@ export function useMyNftApprove<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"mint"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftMint<
   TMode extends WriteContractMode = undefined,
@@ -4677,7 +4519,7 @@ export function useMyNftMint<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"safeTransferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftSafeTransferFrom<
   TMode extends WriteContractMode = undefined,
@@ -4714,7 +4556,7 @@ export function useMyNftSafeTransferFrom<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setApprovalForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftSetApprovalForAll<
   TMode extends WriteContractMode = undefined,
@@ -4751,7 +4593,7 @@ export function useMyNftSetApprovalForAll<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setBackgroundColor"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftSetBackgroundColor<
   TMode extends WriteContractMode = undefined,
@@ -4786,11 +4628,11 @@ export function useMyNftSetBackgroundColor<
 }
 
 /**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1"`.
+ * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function useMyNftSetLogo1<
+export function useMyNftSetLogo<
   TMode extends WriteContractMode = undefined,
   TChainId extends number = keyof typeof myNftAddress,
 >(
@@ -4798,32 +4640,32 @@ export function useMyNftSetLogo1<
     ? UseContractWriteConfig<
         PrepareWriteContractResult<
           typeof myNftABI,
-          'setLogo1'
+          'setLogo'
         >['request']['abi'],
-        'setLogo1',
+        'setLogo',
         TMode
-      > & { address?: Address; chainId?: TChainId; functionName?: 'setLogo1' }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo1', TMode> & {
+      > & { address?: Address; chainId?: TChainId; functionName?: 'setLogo' }
+    : UseContractWriteConfig<typeof myNftABI, 'setLogo', TMode> & {
         abi?: never
         address?: never
         chainId?: TChainId
-        functionName?: 'setLogo1'
+        functionName?: 'setLogo'
       } = {} as any,
 ) {
-  return useContractWrite<typeof myNftABI, 'setLogo1', TMode>({
+  return useContractWrite<typeof myNftABI, 'setLogo', TMode>({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1',
+    functionName: 'setLogo',
     ...config,
   } as any)
 }
 
 /**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Background"`.
+ * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogoBackground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function useMyNftSetLogo1Background<
+export function useMyNftSetLogoBackground<
   TMode extends WriteContractMode = undefined,
   TChainId extends number = keyof typeof myNftAddress,
 >(
@@ -4831,36 +4673,36 @@ export function useMyNftSetLogo1Background<
     ? UseContractWriteConfig<
         PrepareWriteContractResult<
           typeof myNftABI,
-          'setLogo1Background'
+          'setLogoBackground'
         >['request']['abi'],
-        'setLogo1Background',
+        'setLogoBackground',
         TMode
       > & {
         address?: Address
         chainId?: TChainId
-        functionName?: 'setLogo1Background'
+        functionName?: 'setLogoBackground'
       }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo1Background', TMode> & {
+    : UseContractWriteConfig<typeof myNftABI, 'setLogoBackground', TMode> & {
         abi?: never
         address?: never
         chainId?: TChainId
-        functionName?: 'setLogo1Background'
+        functionName?: 'setLogoBackground'
       } = {} as any,
 ) {
-  return useContractWrite<typeof myNftABI, 'setLogo1Background', TMode>({
+  return useContractWrite<typeof myNftABI, 'setLogoBackground', TMode>({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1Background',
+    functionName: 'setLogoBackground',
     ...config,
   } as any)
 }
 
 /**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Degrees"`.
+ * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogoDegrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function useMyNftSetLogo1Degrees<
+export function useMyNftSetLogoDegrees<
   TMode extends WriteContractMode = undefined,
   TChainId extends number = keyof typeof myNftAddress,
 >(
@@ -4868,36 +4710,36 @@ export function useMyNftSetLogo1Degrees<
     ? UseContractWriteConfig<
         PrepareWriteContractResult<
           typeof myNftABI,
-          'setLogo1Degrees'
+          'setLogoDegrees'
         >['request']['abi'],
-        'setLogo1Degrees',
+        'setLogoDegrees',
         TMode
       > & {
         address?: Address
         chainId?: TChainId
-        functionName?: 'setLogo1Degrees'
+        functionName?: 'setLogoDegrees'
       }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo1Degrees', TMode> & {
+    : UseContractWriteConfig<typeof myNftABI, 'setLogoDegrees', TMode> & {
         abi?: never
         address?: never
         chainId?: TChainId
-        functionName?: 'setLogo1Degrees'
+        functionName?: 'setLogoDegrees'
       } = {} as any,
 ) {
-  return useContractWrite<typeof myNftABI, 'setLogo1Degrees', TMode>({
+  return useContractWrite<typeof myNftABI, 'setLogoDegrees', TMode>({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1Degrees',
+    functionName: 'setLogoDegrees',
     ...config,
   } as any)
 }
 
 /**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Foreground"`.
+ * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogoForeground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function useMyNftSetLogo1Foreground<
+export function useMyNftSetLogoForeground<
   TMode extends WriteContractMode = undefined,
   TChainId extends number = keyof typeof myNftAddress,
 >(
@@ -4905,458 +4747,26 @@ export function useMyNftSetLogo1Foreground<
     ? UseContractWriteConfig<
         PrepareWriteContractResult<
           typeof myNftABI,
-          'setLogo1Foreground'
+          'setLogoForeground'
         >['request']['abi'],
-        'setLogo1Foreground',
+        'setLogoForeground',
         TMode
       > & {
         address?: Address
         chainId?: TChainId
-        functionName?: 'setLogo1Foreground'
+        functionName?: 'setLogoForeground'
       }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo1Foreground', TMode> & {
+    : UseContractWriteConfig<typeof myNftABI, 'setLogoForeground', TMode> & {
         abi?: never
         address?: never
         chainId?: TChainId
-        functionName?: 'setLogo1Foreground'
+        functionName?: 'setLogoForeground'
       } = {} as any,
 ) {
-  return useContractWrite<typeof myNftABI, 'setLogo1Foreground', TMode>({
+  return useContractWrite<typeof myNftABI, 'setLogoForeground', TMode>({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1Foreground',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo2<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo2'
-        >['request']['abi'],
-        'setLogo2',
-        TMode
-      > & { address?: Address; chainId?: TChainId; functionName?: 'setLogo2' }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo2', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo2'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo2', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Background"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo2Background<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo2Background'
-        >['request']['abi'],
-        'setLogo2Background',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo2Background'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo2Background', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo2Background'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo2Background', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2Background',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Degrees"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo2Degrees<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo2Degrees'
-        >['request']['abi'],
-        'setLogo2Degrees',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo2Degrees'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo2Degrees', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo2Degrees'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo2Degrees', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2Degrees',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Foreground"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo2Foreground<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo2Foreground'
-        >['request']['abi'],
-        'setLogo2Foreground',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo2Foreground'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo2Foreground', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo2Foreground'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo2Foreground', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2Foreground',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo3<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo3'
-        >['request']['abi'],
-        'setLogo3',
-        TMode
-      > & { address?: Address; chainId?: TChainId; functionName?: 'setLogo3' }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo3', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo3'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo3', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Background"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo3Background<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo3Background'
-        >['request']['abi'],
-        'setLogo3Background',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo3Background'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo3Background', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo3Background'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo3Background', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3Background',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Degrees"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo3Degrees<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo3Degrees'
-        >['request']['abi'],
-        'setLogo3Degrees',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo3Degrees'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo3Degrees', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo3Degrees'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo3Degrees', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3Degrees',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Foreground"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo3Foreground<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo3Foreground'
-        >['request']['abi'],
-        'setLogo3Foreground',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo3Foreground'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo3Foreground', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo3Foreground'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo3Foreground', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3Foreground',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo4<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo4'
-        >['request']['abi'],
-        'setLogo4',
-        TMode
-      > & { address?: Address; chainId?: TChainId; functionName?: 'setLogo4' }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo4', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo4'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo4', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Background"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo4Background<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo4Background'
-        >['request']['abi'],
-        'setLogo4Background',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo4Background'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo4Background', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo4Background'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo4Background', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4Background',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Degrees"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo4Degrees<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo4Degrees'
-        >['request']['abi'],
-        'setLogo4Degrees',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo4Degrees'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo4Degrees', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo4Degrees'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo4Degrees', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4Degrees',
-    ...config,
-  } as any)
-}
-
-/**
- * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Foreground"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function useMyNftSetLogo4Foreground<
-  TMode extends WriteContractMode = undefined,
-  TChainId extends number = keyof typeof myNftAddress,
->(
-  config: TMode extends 'prepared'
-    ? UseContractWriteConfig<
-        PrepareWriteContractResult<
-          typeof myNftABI,
-          'setLogo4Foreground'
-        >['request']['abi'],
-        'setLogo4Foreground',
-        TMode
-      > & {
-        address?: Address
-        chainId?: TChainId
-        functionName?: 'setLogo4Foreground'
-      }
-    : UseContractWriteConfig<typeof myNftABI, 'setLogo4Foreground', TMode> & {
-        abi?: never
-        address?: never
-        chainId?: TChainId
-        functionName?: 'setLogo4Foreground'
-      } = {} as any,
-) {
-  return useContractWrite<typeof myNftABI, 'setLogo4Foreground', TMode>({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4Foreground',
+    functionName: 'setLogoForeground',
     ...config,
   } as any)
 }
@@ -5364,7 +4774,7 @@ export function useMyNftSetLogo4Foreground<
 /**
  * Wraps __{@link useContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"transferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftTransferFrom<
   TMode extends WriteContractMode = undefined,
@@ -5401,7 +4811,7 @@ export function useMyNftTransferFrom<
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftWrite<TFunctionName extends string>(
   config: Omit<
@@ -5419,7 +4829,7 @@ export function usePrepareMyNftWrite<TFunctionName extends string>(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"approve"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftApprove(
   config: Omit<
@@ -5438,7 +4848,7 @@ export function usePrepareMyNftApprove(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"mint"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftMint(
   config: Omit<
@@ -5457,7 +4867,7 @@ export function usePrepareMyNftMint(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"safeTransferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftSafeTransferFrom(
   config: Omit<
@@ -5476,7 +4886,7 @@ export function usePrepareMyNftSafeTransferFrom(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setApprovalForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftSetApprovalForAll(
   config: Omit<
@@ -5495,7 +4905,7 @@ export function usePrepareMyNftSetApprovalForAll(
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setBackgroundColor"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftSetBackgroundColor(
   config: Omit<
@@ -5512,313 +4922,85 @@ export function usePrepareMyNftSetBackgroundColor(
 }
 
 /**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1"`.
+ * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function usePrepareMyNftSetLogo1(
+export function usePrepareMyNftSetLogo(
   config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1'>,
+    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo'>,
     'abi' | 'address' | 'functionName'
   > & { chainId?: keyof typeof myNftAddress } = {} as any,
 ) {
   return usePrepareContractWrite({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1',
+    functionName: 'setLogo',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1'>)
+  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo'>)
 }
 
 /**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Background"`.
+ * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogoBackground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function usePrepareMyNftSetLogo1Background(
+export function usePrepareMyNftSetLogoBackground(
   config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1Background'>,
+    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogoBackground'>,
     'abi' | 'address' | 'functionName'
   > & { chainId?: keyof typeof myNftAddress } = {} as any,
 ) {
   return usePrepareContractWrite({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1Background',
+    functionName: 'setLogoBackground',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1Background'>)
+  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogoBackground'>)
 }
 
 /**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Degrees"`.
+ * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogoDegrees"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function usePrepareMyNftSetLogo1Degrees(
+export function usePrepareMyNftSetLogoDegrees(
   config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1Degrees'>,
+    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogoDegrees'>,
     'abi' | 'address' | 'functionName'
   > & { chainId?: keyof typeof myNftAddress } = {} as any,
 ) {
   return usePrepareContractWrite({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1Degrees',
+    functionName: 'setLogoDegrees',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1Degrees'>)
+  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogoDegrees'>)
 }
 
 /**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo1Foreground"`.
+ * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogoForeground"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
-export function usePrepareMyNftSetLogo1Foreground(
+export function usePrepareMyNftSetLogoForeground(
   config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1Foreground'>,
+    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogoForeground'>,
     'abi' | 'address' | 'functionName'
   > & { chainId?: keyof typeof myNftAddress } = {} as any,
 ) {
   return usePrepareContractWrite({
     abi: myNftABI,
     address: myNftAddress[84531],
-    functionName: 'setLogo1Foreground',
+    functionName: 'setLogoForeground',
     ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo1Foreground'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo2(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Background"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo2Background(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2Background'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2Background',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2Background'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Degrees"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo2Degrees(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2Degrees'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2Degrees',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2Degrees'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo2Foreground"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo2Foreground(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2Foreground'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo2Foreground',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo2Foreground'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo3(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Background"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo3Background(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3Background'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3Background',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3Background'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Degrees"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo3Degrees(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3Degrees'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3Degrees',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3Degrees'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo3Foreground"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo3Foreground(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3Foreground'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo3Foreground',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo3Foreground'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo4(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Background"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo4Background(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4Background'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4Background',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4Background'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Degrees"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo4Degrees(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4Degrees'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4Degrees',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4Degrees'>)
-}
-
-/**
- * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"setLogo4Foreground"`.
- *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
- */
-export function usePrepareMyNftSetLogo4Foreground(
-  config: Omit<
-    UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4Foreground'>,
-    'abi' | 'address' | 'functionName'
-  > & { chainId?: keyof typeof myNftAddress } = {} as any,
-) {
-  return usePrepareContractWrite({
-    abi: myNftABI,
-    address: myNftAddress[84531],
-    functionName: 'setLogo4Foreground',
-    ...config,
-  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogo4Foreground'>)
+  } as UsePrepareContractWriteConfig<typeof myNftABI, 'setLogoForeground'>)
 }
 
 /**
  * Wraps __{@link usePrepareContractWrite}__ with `abi` set to __{@link myNftABI}__ and `functionName` set to `"transferFrom"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function usePrepareMyNftTransferFrom(
   config: Omit<
@@ -5837,7 +5019,7 @@ export function usePrepareMyNftTransferFrom(
 /**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftEvent<TEventName extends string>(
   config: Omit<
@@ -5855,7 +5037,7 @@ export function useMyNftEvent<TEventName extends string>(
 /**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"Approval"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftApprovalEvent(
   config: Omit<
@@ -5874,7 +5056,7 @@ export function useMyNftApprovalEvent(
 /**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"ApprovalForAll"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftApprovalForAllEvent(
   config: Omit<
@@ -5893,7 +5075,7 @@ export function useMyNftApprovalForAllEvent(
 /**
  * Wraps __{@link useContractEvent}__ with `abi` set to __{@link myNftABI}__ and `eventName` set to `"Transfer"`.
  *
- * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xac88df20c094bef2fba5beed1cb623d5138f601c)
+ * [__View Contract on Base Goerli Basescan__](https://goerli.basescan.org/address/0xa26598928e7a402e745f9fe048ec7404189303e2)
  */
 export function useMyNftTransferEvent(
   config: Omit<

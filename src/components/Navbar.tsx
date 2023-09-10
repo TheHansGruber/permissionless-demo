@@ -1,5 +1,6 @@
+import { Flex, Spacer, HStack, IconButton, useDisclosure } from "@chakra-ui/react";
+import { RepeatIcon } from '@chakra-ui/icons'
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Box, Flex, Spacer, Link, Text, VStack, HStack, Button, IconButton, useDisclosure } from "@chakra-ui/react";
 
 export function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -15,15 +16,10 @@ export function Navbar() {
         bg="#white"
         color="black"
       >
-        <Flex align="center" mr={5}>
-          {/* <Text fontSize="xl" fontWeight="bold">
-            Base Starter App
-          </Text> */}
-        </Flex>
+        <Flex align="center" mr={5} />
         <Spacer />
-  
         <HStack spacing={4}>
-            <IconButton></IconButton>
+            {/* <IconButton icon={<RepeatIcon />}></IconButton> */}
             <ConnectButton />
         </HStack>
       </Flex>

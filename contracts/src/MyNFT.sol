@@ -115,7 +115,7 @@ contract MyNFT is ERC721Enumerable {
         backgroundColor = _backgroundColor;
     }
 
-    function setLogo(uint256 index, string memory _backgroundColor, string memory _foregroundColor, uint256 _degrees) internal {
+    function setLogo(uint256 index, string memory _backgroundColor, string memory _foregroundColor, uint256 _degrees) public {
         require(isHexString(_backgroundColor), "Invalid hex string");
         require(isHexString(_foregroundColor), "Invalid hex string");
         Logo storage logo = logos[index];
@@ -124,86 +124,23 @@ contract MyNFT is ERC721Enumerable {
         logo.degrees = _degrees;
     }
 
-    function setLogoBackground(uint256 index, string memory _backgroundColor) internal {
+    function setLogoBackground(uint256 index, string memory _backgroundColor) public {
         require(isHexString(_backgroundColor), "Invalid hex string");
         Logo storage logo = logos[index];
         logo.backgroundColor = _backgroundColor;
     }
 
-    function setLogoForeground(uint256 index, string memory _foregroundColor) internal {
+    function setLogoForeground(uint256 index, string memory _foregroundColor) public {
         require(isHexString(_foregroundColor), "Invalid hex string");
         Logo storage logo = logos[index];
         logo.foregroundColor = _foregroundColor;
     }
 
-    function setLogoDegrees(uint256 index, uint256 _degrees) internal {
+    function setLogoDegrees(uint256 index, uint256 _degrees) public {
         Logo storage logo = logos[index];
         logo.degrees = _degrees;
     }
 
-    function setLogo1(string memory _backgroundColor, string memory _foregroundColor, uint256 _degrees) public {
-        setLogo(0, _backgroundColor, _foregroundColor, _degrees);
-    }
-
-    function setLogo2(string memory _backgroundColor, string memory _foregroundColor, uint256 _degrees) public {
-        setLogo(1, _backgroundColor, _foregroundColor, _degrees);
-    }
-
-    function setLogo3(string memory _backgroundColor, string memory _foregroundColor, uint256 _degrees) public {
-        setLogo(3, _backgroundColor, _foregroundColor, _degrees);
-    }
-
-    function setLogo4(string memory _backgroundColor, string memory _foregroundColor, uint256 _degrees) public {
-        setLogo(4, _backgroundColor, _foregroundColor, _degrees);
-    }
-
-    function setLogo1Background(string memory _backgroundColor) public {
-        setLogoBackground(0, _backgroundColor);
-    }
-
-    function setLogo1Foreground(string memory _foregroundColor) public {
-        setLogoForeground(0, _foregroundColor);
-    }
-    
-    function setLogo1Degrees(uint256 _degrees) public {
-        setLogoDegrees(0, _degrees);
-    }
-
-    function setLogo2Background(string memory _backgroundColor) public {
-        setLogoBackground(1, _backgroundColor);
-    }
-
-    function setLogo2Foreground(string memory _foregroundColor) public {
-        setLogoForeground(1, _foregroundColor);
-    }
-    
-    function setLogo2Degrees(uint256 _degrees) public {
-        setLogoDegrees(1, _degrees);
-    }
-
-    function setLogo3Background(string memory _backgroundColor) public {
-        setLogoBackground(2, _backgroundColor);
-    }
-
-    function setLogo3Foreground(string memory _foregroundColor) public {
-        setLogoForeground(2, _foregroundColor);
-    }
-
-    function setLogo3Degrees(uint256 _degrees) public {
-        setLogoDegrees(2, _degrees);
-    }
-
-    function setLogo4Background(string memory _backgroundColor) public {
-        setLogoBackground(3, _backgroundColor);
-    }
-
-    function setLogo4Foreground(string memory _foregroundColor) public {
-        setLogoForeground(3, _foregroundColor);
-    }
-
-    function setLogo4Degrees(uint256 _degrees) public {
-        setLogoDegrees(3, _degrees);
-    }
     function toString(uint256 _number) internal pure returns (string memory) {
         if (_number == 0) {
             return "0";

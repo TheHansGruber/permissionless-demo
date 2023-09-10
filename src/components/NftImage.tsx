@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import { useAccount } from "wagmi";
+import { useEffect, useState } from 'react';
 import { useMyNftTokenUri } from "../generated";
 
 export function NftImage() {
 
     const [jsonData, setJsonData] = useState(null);
 
-    const { address } = useAccount();
+    const tokenId = 0n;
 
-    const tokenId = 0n; // Replace with the desired token ID
-    // Call the useMyNftTokenUri hook to fetch the token URI
     const { data: tokenUri, error } = useMyNftTokenUri({
         args: [tokenId],
     });
 
     useEffect(() => {
-        // Check for errors
         if (error) {
           console.error('Error fetching token URI:', error);
         }
