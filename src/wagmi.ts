@@ -1,11 +1,11 @@
 import { configureChains, createConfig } from "wagmi";
-import { foundry, optimism, optimismGoerli } from "wagmi/chains";
+import { baseGoerli, foundry } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 // import { alchemyProvider } from "wagmi/providers/alchemy";
 import { getDefaultWallets } from "@rainbow-me/rainbowkit";
 
 const { chains, publicClient } = configureChains(
-  [optimism, optimismGoerli, foundry],
+  [ baseGoerli, foundry],
   [
     jsonRpcProvider({
       rpc: (chain) => {

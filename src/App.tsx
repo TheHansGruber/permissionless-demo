@@ -1,10 +1,7 @@
 import { useAccount } from 'wagmi'
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 
-import { Account } from './components/Account'
-// import { Connect } from './components/Connect'
-// import { Counter } from './components/Counter'
-// import { NetworkSwitcher } from './components/NetworkSwitcher'
+import { NftImage } from './components/NftImage'
 
 export function App() {
   const { isConnected } = useAccount()
@@ -17,7 +14,7 @@ export function App() {
 
       {isConnected && (
         <>
-          <Account />
+          <NftImage />
         </>
       )}
     </>
