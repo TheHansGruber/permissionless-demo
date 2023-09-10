@@ -23,6 +23,7 @@ export function Navbar() {
         <Spacer />
   
         <HStack spacing={4}>
+            <IconButton></IconButton>
             <ConnectButton />
         </HStack>
       </Flex>
