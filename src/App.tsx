@@ -1,4 +1,3 @@
-import { useAccount } from 'wagmi'
 import { Box, Flex, HStack, VStack } from '@chakra-ui/react'
 
 import { NftImage } from './components/NftImage'
@@ -7,14 +6,12 @@ import { LogoEditBox } from './components/LogoEditBox'
 import { BackgroundEditBox } from './components/BackgroundEditBox'
 
 export function App() {
-  const { isConnected } = useAccount()
 
   return (
     <>
     <Navbar />
     <Flex justifyContent="center">
     <Box marginTop={50}>
-      {isConnected && (
         <VStack>
           <NftImage />
           <HStack marginTop={10} gap={5}>
@@ -27,7 +24,6 @@ export function App() {
           <HStack>
           </HStack>
         </ VStack>
-      )}
     </ Box>
     </ Flex>
     < />)
